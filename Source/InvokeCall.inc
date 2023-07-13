@@ -176,8 +176,11 @@ begin
       end;
       btArray: //need to check with open arrays
       begin
-        for RttiType in ctx.GetTypes do
+        for RttiType in ctx.GetTypes do begin
+          //OutputDebugString(PChar(RttiType.Name)); Uma bosta!
           if (RttiType.Name.ToUpper.EndsWith(String(res.aType.FExportName))) and (RttiType.TypeKind = tkDynArray) then
+//            (RttiType.Name.ToUpper.EndsWith(String(res.aType.FExportName)) or (RttiType.Name.Equals('TArray<System.string>')) and (String(res.aType.FExportName) = 'TSTRINGDYNARRAY') ) and
+//            (RttiType.TypeKind = tkDynArray) then
           begin
             ResValue := Invoke(Address,Args,SysCalConv,RttiType.Handle,False,IsConstr);
             if ResValue.GetArrayLength > 0 then
@@ -186,6 +189,7 @@ begin
               res.dta := nil;
             Break;
           end;
+        end;
       end;
       btVariant:
         begin

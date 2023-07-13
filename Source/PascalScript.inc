@@ -11,6 +11,10 @@
 
 {$INCLUDE eDefines.inc}
 
+{!$DEFINE uPSRuntime_DEBUG}
+
+{$DEFINE PS_USESSUPPORT}
+
 {$IFDEF FPC}{$MODE DELPHI}{$H+}{$ENDIF}
 
 {$IFDEF VER125}{C4}{$B-}{$X+}{$T-}{$H+}{$ENDIF}
