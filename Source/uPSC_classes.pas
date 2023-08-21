@@ -50,6 +50,7 @@ begin
     IsAbstract := True;
 {$IFDEF DELPHI2005UP}
     RegisterMethod('constructor Create;');
+    RegisterMethod('function AddPair(const Name, Value: string): TStrings');
 {$ENDIF}
     RegisterMethod('function Add(S: string): Integer;');
     RegisterMethod('procedure Append(S: string);');

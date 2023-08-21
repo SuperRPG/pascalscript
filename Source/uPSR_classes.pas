@@ -106,7 +106,9 @@ begin
 {$ENDIF}
 
     RegisterVirtualMethod(@TStrings.Add, 'Add');
+
     RegisterMethod(@TStrings.Append, 'Append');
+    RegisterMethod(@TStrings.AddPair, 'AddPair');
     RegisterVirtualMethod(@TStrings.AddStrings, 'AddStrings');
     RegisterVirtualAbstractMethod(TStringList, @TStringList.Clear, 'Clear');
     RegisterVirtualAbstractMethod(TStringList, @TStringList.Delete, 'Delete');

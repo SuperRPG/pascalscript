@@ -11,7 +11,7 @@
 
 {$INCLUDE eDefines.inc}
 
-{!$DEFINE uPSRuntime_DEBUG}
+{ $DEFINE uPSRuntime_DEBUG}
 
 {$DEFINE PS_USESSUPPORT}
 
