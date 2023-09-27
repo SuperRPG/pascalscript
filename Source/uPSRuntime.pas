@@ -3460,6 +3460,7 @@ begin
     btU16: Result := tbtu16(src^);
     btS16: Result := tbts16(src^);
     btU32: Result := tbtu32(src^);
+    btClass,
     btS32: Result := tbts32(src^);
     btS64: Result := tbts64(src^);
     btChar: Result := Ord(tbtchar(Src^));
@@ -3469,7 +3470,8 @@ begin
 {$IFDEF DELPHI6UP}
     btVariant:   Result := Variant(src^);
 {$ENDIF}
-    else raise Exception.Create(RPS_TypeMismatch);
+    else
+      raise Exception.Create(RPS_TypeMismatch);
   end;
 end;
 {$ENDIF}
